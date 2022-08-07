@@ -35,12 +35,12 @@ if (isset($_POST['login'])) {
 if (isset($_POST['tambahpelanggan'])) {
     // initial variable
     $nama_pelanggan = $_POST['nama_pelanggan'];
-    $no_telp = $_POST['no_telp'];
+    $no_tlp = $_POST['no_tlp'];
     $alamat = $_POST['alamat'];
 
     $tambahpelanggan = mysqli_query(
         $koneksi,
-        "INSERT INTO pelanggan (nama_pelanggan, no_telp, alamat) 
+        "INSERT INTO pelanggan (nama_pelanggan, no_tlp, alamat) 
    VALUES ('$nama_pelanggan','$no_telp','$alamat')"
     );
 
@@ -75,11 +75,11 @@ if (isset($_POST['hapuspelanggan'])) {
 if (isset($_POST['editpelanggan'])) {
 
     $nama_pelanggan = $_POST['nama_pelanggan'];
-    $notelp = $_POST['no_telp'];
+    $no_tlp = $_POST['no_tlp'];
     $alamat = $_POST['alamat'];
     $id_pelanggan = $_POST['id_pelanggan'];
 
-    $edit_pelanggan = mysqli_query($koneksi, "UPDATE pelanggan SET nama_pelanggan='$nama_pelanggan', no_telp='$notelp', alamat='$alamat' WHERE id_pelanggan='$id_pelanggan'");
+    $edit_pelanggan = mysqli_query($koneksi, "UPDATE pelanggan SET nama_pelanggan='$nama_pelanggan', no_tlp='$no_tlp', alamat='$alamat' WHERE id_pelanggan='$id_pelanggan'");
 
     if ($edit_pelanggan) {
         header('location:pelanggan.php');
